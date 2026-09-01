@@ -1,13 +1,17 @@
 from pathlib import Path
 import shutil
 
-pasta = Path.home() / "Documentos" / "pasta_teste"
-contagem = {}
+origem = Path.home() / "Documentos" / "pasta_teste"
 
-for item in pasta.iterdir():    
+for item in origem.iterdir():    
     if item.is_file():
-        # print(f"{item.name} -> {item.suffix}")
         tipo = item.suffix
-        Path.mkdir(exist_ok=True)
-        contagem[tipo] = contagem.get(tipo, 0) + 1
-print(contagem)
+        if not tipo:
+            tipo = "sem_extensao"
+        tipo_nome = tipo.upper()
+        tipo_nome = tipo_nome.removeprefix(".")
+        destino = Path.home() / "Documentos" / "pasta_teste" / tipo_nome
+        destino.mkdir(exist_ok=True)
+        shutil.move(item, str(destino))
+        print(f"{item.name} -> {destino.name}")
+        
