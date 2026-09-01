@@ -12,6 +12,10 @@ for item in origem.iterdir():
         tipo_nome = tipo_nome.removeprefix(".")
         destino = Path.home() / "Documentos" / "pasta_teste" / tipo_nome
         destino.mkdir(exist_ok=True)
-        shutil.move(item, str(destino))
-        print(f"{item.name} -> {destino.name}")
+        try:
+            shutil.move(item, str(destino))
+            print(f"{item.name} -> {destino.name}")
+        except (PermissionError, shutil.Error, OSError) as e:
+            print(f"Erro ao mover {item.name}: {e}")
+        
         
