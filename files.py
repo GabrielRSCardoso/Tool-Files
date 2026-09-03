@@ -24,13 +24,19 @@ def pasta_destino(item) -> Path:
     destino.mkdir(exist_ok=True)
     return destino
 
+movidos = 0
+nao_movidos = 0
 
 for item in origem.iterdir():    
-    if item.is_file():
+    if item.is_file() and item.name.startswith("."):
         destino = pasta_destino(item)
         try:
             shutil.move(item, str(destino))
             logging.info(f"{item.name} -> {destino.name}")
+            movidos+=1
         except (PermissionError, shutil.Error, OSError) as e:
             logging.error(f"Erro ao mover {item.name}: {e}")
+            nao_movidos+=1
+
+logging.info(f"Arquivos movidos: {movidos}, não movidos: {nao_movidos}")
 
