@@ -1,7 +1,6 @@
-2026-09-03 15:00:42,330 - ERROR - Erro ao mover testeTry.txt: [Errno 13] Permission denied: '/home/gabriel/Documentos/pasta_teste/TXT/testeTry.txt'
-2026-09-03 15:01:36,226 - ERROR - Erro ao mover testeTry.txt: [Errno 13] Permission denied: '/home/gabriel/Documentos/pasta_teste/TXT/testeTry.txt'
-2026-09-03 15:01:36,227 - ERROR - Erro ao mover teste.txt: [Errno 13] Permission denied: '/home/gabriel/Documentos/pasta_teste/TXT/teste.txt'
-2026-09-03 15:01:36,227 - INFO - foto.jpg -> JPG
-2026-09-03 15:01:36,227 - INFO - plano.pdf -> PDF
-2026-09-03 15:01:36,227 - INFO - teste -> SEM_EXTENSAO
-2026-09-03 15:01:36,227 - INFO - Arquivos movidos: 3, não movidos: 2
+2026-09-04 22:38:11,192 - ERROR - Erro ao mover testeTry.txt: [Errno 13] Permission denied: '/home/gabriel/Documentos/pasta_teste/TXT/testeTry.txt'
+2026-09-04 22:38:11,192 - ERROR - Erro ao mover teste.txt: [Errno 13] Permission denied: '/home/gabriel/Documentos/pasta_teste/TXT/teste.txt'
+2026-09-04 22:38:11,192 - INFO - foto.jpg -> JPG
+2026-09-04 22:38:11,192 - INFO - plano.pdf -> PDF
+2026-09-04 22:38:11,192 - INFO - teste -> SEM_EXTENSAO
+2026-09-04 22:38:11,193 - INFO - Arquivos movidos: 3, não movidos: 2

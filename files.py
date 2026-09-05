@@ -1,6 +1,7 @@
 from pathlib import Path
 import shutil
 import logging
+from gera_json import *
 
 logging.basicConfig(
     filename="logs.log",
@@ -26,9 +27,10 @@ def pasta_destino(item) -> Path:
 
 movidos = 0
 nao_movidos = 0
+erros = []
 
 for item in origem.iterdir():    
-    if item.is_file() and item.name.startswith("."):
+    if item.is_file() and not item.name.startswith("."):
         destino = pasta_destino(item)
         try:
             shutil.move(item, str(destino))
@@ -36,7 +38,11 @@ for item in origem.iterdir():
             movidos+=1
         except (PermissionError, shutil.Error, OSError) as e:
             logging.error(f"Erro ao mover {item.name}: {e}")
+            erros.append(str(e))
             nao_movidos+=1
 
+
+dados = montar_relatorio(movidos, nao_movidos, erros)
+salvar_relatorio(dados)
 logging.info(f"Arquivos movidos: {movidos}, não movidos: {nao_movidos}")
 

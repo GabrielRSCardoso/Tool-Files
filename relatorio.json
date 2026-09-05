@@ -1,0 +1,9 @@
+{
+  "data_execucao": "2026-09-04 22:38:11.192936",
+  "movidos": 3,
+  "falhas": 2,
+  "erros": [
+    "[Errno 13] Permission denied: '/home/gabriel/Documentos/pasta_teste/TXT/testeTry.txt'",
+    "[Errno 13] Permission denied: '/home/gabriel/Documentos/pasta_teste/TXT/teste.txt'"
+  ]
+}
