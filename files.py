@@ -2,6 +2,7 @@ from pathlib import Path
 import shutil
 import logging
 from gera_json import *
+from gera_csv import *
 
 logging.basicConfig(
     filename="logs.log",
@@ -43,6 +44,8 @@ for item in origem.iterdir():
 
 
 dados = montar_relatorio(movidos, nao_movidos, erros)
+linha = cria_linha(movidos, nao_movidos)
+salvar_historico(linha)
 salvar_relatorio(dados)
 logging.info(f"Arquivos movidos: {movidos}, não movidos: {nao_movidos}")
 

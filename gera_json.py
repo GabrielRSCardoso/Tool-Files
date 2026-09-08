@@ -1,9 +1,11 @@
 import json
 from datetime import datetime
 
+now = datetime.now()
+
 def montar_relatorio(movidos, nao_movidos, erros):
     return {
-        "data_execucao": str(datetime.now()),
+        "data_execucao": now.strftime("%Y-%m-%d %H:%M:%S"),
         "movidos": movidos,
         "falhas": nao_movidos,
         "erros": erros
